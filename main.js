@@ -6,7 +6,7 @@ span.style.fontSize = '40px';
 
 const p = document.querySelector('p.mess-with-me');
 
-p.style.color = 'green';
+p.style.backgroundColor = 'green';
 
 const hide = document.querySelector('#hide-me');
 
