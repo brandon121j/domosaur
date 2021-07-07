@@ -16,8 +16,22 @@ document.querySelector('#triceratops').style.width = '324px';
 
 document.querySelector('.mess-with-me').addEventListener('click', colorChange);
 
+let switcher = 0;
+
+document.querySelector('.mess-with-me').onmouseover = function() {
+
+    document.querySelector('.mess-with-me').style.cursor = 'pointer';
+
+};
+
 function colorChange() {
-    document.querySelector('.mess-with-me').style.color = 'orange';
+    switcher++;
+    if (switcher % 2 !== 0) {
+        document.querySelector('.mess-with-me').style.color = 'orange';
+    }
+    else {
+        document.querySelector('.mess-with-me').style.color = 'black';
+    }
 }
 
 document.querySelector('img#triceratops').addEventListener('click', firstly);
