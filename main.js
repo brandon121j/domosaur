@@ -34,19 +34,43 @@ function colorChange() {
     }
 }
 
+borderRemover = 0;
+
+document.querySelector('img#triceratops').onmouseover = function() {
+
+    document.querySelector('img#triceratops').style.cursor = 'pointer';
+
+}
+
 document.querySelector('img#triceratops').addEventListener('click', firstly);
 
 function firstly() {
-    document.querySelector('img#triceratops').style.border = 'solid 5px';
-    document.querySelector('img#triceratops').style.borderColor = 'red';
+    borderRemover++;
+    if (borderRemover % 2 !== 0) {
+        document.querySelector('img#triceratops').style.border = 'solid 5px';
+        document.querySelector('img#triceratops').style.borderColor = 'red';
+    }
+    else {
+        document.querySelector('img#triceratops').style.border = 'none';
+        document.querySelector('img#triceratops').style.borderColor = 'white';
+    }
 }
 
 const feather = document.querySelector('#feathers');
 
 feather.addEventListener('click', trans);
 
+transCounter = 0;
+
+feather.style.cursor = 'pointer';
+
 function trans() {
-    feather.style.opacity = '0.5';
+    transCounter++;
+    if (transCounter % 2 !== 0) {
+        feather.style.opacity = '0.5';
+    }
+
+    else {feather.style.opacity = '1.0';}
 }
 
 const button = document.querySelector('#toggle');
@@ -54,6 +78,8 @@ const button = document.querySelector('#toggle');
 button.addEventListener('click', final);
 
 let counter = 0;
+
+button.onmouseover = function() {button.style.cursor = 'pointer'};
 
 function final() {
     counter++;
@@ -68,6 +94,7 @@ function final() {
 const big = document.querySelector('#biggify');
 
 big.onmouseover = function() {
+    big.style.cursor = 'pointer';
     big.style.width = '200px';
 }
 
